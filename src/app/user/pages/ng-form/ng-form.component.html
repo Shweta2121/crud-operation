@@ -1,0 +1,102 @@
+<div class="uk-flex uk-flex-center">
+    <div class="uk-card uk-card-default uk-card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <fieldset class="uk-fieldset">
+          <div class="uk-form-controls uk-margin">
+            <div class="uk-grid-small uk-grid-match uk-child-width-1-2@s" uk-grid>
+                <div>
+                  <label>First Name</label>
+                  <input formControlName="firstName" class="uk-input" type="text" placeholder="Input">
+                  <div *ngIf="submitted && form.controls['firstName'].errors" class="uk-text-danger">
+                    <div *ngIf="form.controls['firstName'].errors?.['required']">First Name is required</div>
+                </div>
+                </div>
+              <div>
+                <label>Last Name</label>
+                  <input class="uk-input" formControlName="lastName"  type="text" placeholder="Input">
+                  <div *ngIf="submitted && form.controls['lastName'].errors" class="uk-text-danger">
+                    <div *ngIf="form.controls['lastName'].errors?.['required']">Last Name is required</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="uk-form-controls uk-margin">
+            <div class="uk-grid-small uk-grid-match uk-child-width-1-2@s" uk-grid>
+            <div>
+              <label>Email</label>
+                <input class="uk-input" type="email" formControlName="email"  placeholder="Input">
+                <div *ngIf="submitted && form.controls['email'].errors" class="uk-text-danger">
+                  <div *ngIf="form.controls['email'].errors?.['required']">Email is required</div>
+              </div>
+            </div>
+            <div>
+              <label>Phone</label>
+                <input class="uk-input" type="number" formControlName="Phone"  placeholder="Input">
+                <div *ngIf="submitted && form.controls['Phone'].errors" class="uk-text-danger">
+                  <div *ngIf="form.controls['Phone'].errors?.['required']">Phone Number is required</div>
+              </div>
+            </div>
+            </div>
+            </div>
+            <div class="uk-form-controls uk-margin">
+              <div class="uk-grid-small uk-grid-match uk-child-width-1-2@s" uk-grid>
+            <div>
+              <label>Company</label>
+                <input class="uk-input" type="text" formControlName="Company" placeholder="Input">
+                <div *ngIf="submitted && form.controls['Company'].errors" class="uk-text-danger">
+                  <div *ngIf="form.controls['Company'].errors?.['required']">Company Name is required</div>
+              </div>
+            </div>
+            <div class="uk-margin">
+              <label>Gender</label>
+              <div class="uk-form-controls uk-grid-small uk-child-width-auto uk-grid">
+                <label><input class="uk-radio" type="radio" formControlName="Gender" value="female">
+                    Female</label><br>
+                <label><input class="uk-radio" type="radio" formControlName="Gender" value="male">
+                    Male</label><br>
+                    <div *ngIf="submitted && form.controls['Gender'].errors" class="uk-text-danger">
+                      <div *ngIf="form.controls['Gender'].errors?.['required']">Gender is required</div>
+                  </div>
+            </div>
+          </div>
+          </div>
+          </div>
+          <div class="uk-form-controls uk-margin">
+            <div class="uk-grid-small uk-grid-match uk-child-width-1-2@s" uk-grid>
+          <div>
+            <label>Date of birth</label>
+            <input class="uk-input" type="date"  formControlName="Birthday" id="birthday" > 
+            <div *ngIf="submitted && form.controls['Birthday'].errors" class="uk-text-danger">
+              <div *ngIf="form.controls['Birthday'].errors?.['required']">Birthday is required</div>
+          </div>
+         </div>
+            </div></div>
+            <div class="uk-form-controls uk-margin">
+              <div class="uk-grid-small uk-grid-match uk-child-width-1-2@s" uk-grid>
+         <div>
+          <label>Password</label>
+            <input class="uk-input" type="password"  formControlName="password" placeholder="Input">
+            <div *ngIf="submitted && form.controls['password'].errors" class="uk-text-danger">
+              <div *ngIf="form.controls['password'].errors?.['required']">Password is required</div>
+              <div *ngIf="form.controls['password'].errors?.['minlength']">Password must be at least 6 characters</div>
+          </div>
+        </div>
+        <div>
+          <label>Confirm Password</label>
+            <input class="uk-input" type="password"  formControlName="confirmPassword" placeholder="Input">
+            <div *ngIf="submitted && form.controls['confirmPassword'].errors" class="uk-text-danger">
+              <div *ngIf="form.controls['confirmPassword'].errors?.['required']">Confirm Password is required</div>
+              <div *ngIf="form.controls['confirmPassword'].errors?.['mustMatch']">Passwords must match</div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </fieldset>
+        <div class="uk-margin uk-text-center">
+          <button class="uk-button uk-button-primary uk-border-rounded">save</button>
+          <button routerLink="/" class="uk-button uk-button-default uk-border-rounded uk-margin-small-left">Cancel</button>
+        </div>
+    </form>
+    <button routerLink="/" class="uk-button uk-button-primary uk-border-rounded uk-text-center uk-margin-small-left">View User</button>
+    </div>
+    </div>
